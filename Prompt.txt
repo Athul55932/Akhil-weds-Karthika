@@ -1,0 +1,99 @@
+Act as a Principal Frontend Engineer and Lead UX Designer. Build a complete, production-ready, highly aesthetic, frontend-only single-page interactive digital wedding invitation web application based on the design system, assets, layout structure, and copy specified below.
+
+---
+
+### Core Tech Stack & Specifications
+- Framework: React 18+ (Vite setup)
+- Styling: Tailwind CSS (with custom color tokens & web fonts)
+- Motion: Framer Motion (smooth scroll, section reveals, micro-interactions, layout transitions)
+- Icons: Lucide React (Calendar, Clock, MapPin, Music, Pause, Heart, Check, Navigation, Sparkles)
+- Fonts: Google Fonts standard import (`Playfair Display` or `Cormorant Garamond` for headings/serif; `Inter` or `Plus Jakarta Sans` for UI/body; `Caveat` or `Sacramento` for handwritten notes).
+
+---
+
+### Design System & Theme Tokens
+Configure Tailwind theme parameters:
+- **Primary / Background Surfaces:** Warm Ivory / Cream (`#FAF7F2` or `#F5EFE6`)
+- **Accent & Highlights:** Maroon / Terracotta (`#7A1C28` or `#8B2635`), Muted Blush (`#E8D3D3`)
+- **Secondary Accent:** Soft Sage / Olive (`#7D8B75` or `#A3B19B`)
+- **Text & Contrast:** Deep Charcoal / Warm Dark Brown (`#2C221E` or `#1E1B18`)
+- **Visual Style:** Organic SVG blob frames, taped photo edges, floating botanical line art, gold/terracotta subtle drop-shadows, generous whitespace, mobile-first responsive layout.
+
+---
+
+### Visual Assets & Placeholder Image Strategy
+Use high-quality Unsplash placeholder images matching the editorial, warm, romantic Kerala-inspired couple photos from the reference board:
+
+1. **Opening / Hero Main Image:** `https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80` (Romantic couple portrait with natural light)
+2. **Hero Secondary / Overlay:** `https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80` (Intimate couple shot)
+3. **Wedding Location / Venue Placeholder:** `https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80` (Kerala backwaters / tropical luxury resort view)
+4. **Gallery Image 1 (Editorial):** `https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80`
+5. **Gallery Image 2 (Candid / Laughing):** `https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80`
+6. **Gallery Image 3 (Traditional / Elegant):** `https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80`
+7. **Gallery Image 4 (Sunset / Environment):** `https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80`
+8. **Thank You / Closing Image:** `https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1400&q=80` (Warm sunset silhouettes)
+
+---
+
+### Application Structure & Page Flow
+
+#### Section 01: Opening / Loading Screen Overlay
+- **Layout:** Fullscreen modal with mask reveal animation. Warm cream surface with floating botanical SVG doodles.
+- **Content:**
+  - Sub-heading: *"With the blessings of our families"*
+  - Main Heading: **AKHIL & KARTHIKA**
+  - Sub-text: **24 · 01 · 2027**
+  - Interactive Action: `OPEN INVITATION →` button styled with maroon fill and rounded pill edges.
+- **Behavior:** Clicking the button triggers a Framer Motion curtain/mask fade-out reveal, plays background ambient music (if allowed), and un-locks page scrolling to reveal Section 02.
+
+#### Sticky Navigation & Floating Music Controller
+- **Navbar:** Appears after opening transition. Contains logo **"A & K"**, section links (*Our Story*, *Details*, *Gallery*, *RSVP*), and a high-contrast `RSVP` CTA button. Smooth scroll targeting.
+- **Floating Music Player:** Bottom-right corner icon button with sound wave animation or subtle spin effect. Toggles play/pause state of an audio track (use a reliable royalty-free ambient wedding instrumental MP3 URL).
+
+#### Section 02: Hero Section
+- **Layout:** Asymmetric editorial grid layout. Left column features hand-drawn style handwritten text *"Together forever"*, couple names in large serif display font, wedding date details, venue preview, and a secondary action button (`Our Journey ↓`). Right column features a large organic curved picture frame enclosing the main couple portrait with SVG floral overlays.
+
+#### Section 03: Live Countdown Counter
+- **Heading:** `THE COUNTDOWN BEGINS` flanked by decorative line-art flowers.
+- **Countdown Engine:** Live JavaScript dynamic target set to `January 24, 2027 11:00:00 GMT+0530`.
+- **Display Grid:** 4 columns: **Days**, **Hours**, **Minutes**, **Seconds** enclosed in delicate cream panels with thin maroon border accents.
+
+#### Section 04: Wedding Event Details
+- **Heading:** `THE WEDDING`
+- **Data Details:**
+  - **Date:** 24 January 2027
+  - **Time:** 11:00 AM – 11:30 AM
+  - **Venue:** Prince Convention Centre, Alappuzha, Kerala
+- **Card Design:** Left panel with event text and Google Maps direct link button (`View Location →`). Right panel displaying a polaroid/taped photo card showing the Kerala destination landscape with handwritten accent text: *"See you there! ♡"*.
+
+#### Section 05: Asymmetric Photo Gallery
+- **Heading:** `OUR MOMENTS`
+- **Layout:** Asymmetric staggered grid layout (not a plain square grid). Incorporate slight photo rotations (e.g., `-2deg`, `3deg`), tape sticker corner details, overlapping borders, and scroll-triggered fade-and-scale Framer Motion effects. Include minimal handwritten captions under select photos (e.g., *"Better together"*, *"A new chapter"*).
+
+#### Section 06: Love Quote Pause
+- **Design:** Clean typographic section with ample breathing room.
+- **Content:** Large quotation marks around: *"Two hearts, one beautiful beginning."* surrounded by subtle drifting petal/leaf vector graphics.
+
+#### Section 07: RSVP Section (Frontend Only)
+- **Heading:** `WE WOULD LOVE TO CELEBRATE WITH YOU`
+- **Form UI:**
+  - Input: **Your Name** (Text input)
+  - Radio Selection: **Will you be attending?** (Option 1: *Joyfully Accept*, Option 2: *Regretfully Decline*)
+  - **Note:** Exclude any number-of-guests field as per blueprint.
+  - CTA: `Submit RSVP →` button.
+- **Interactivity:** On submit, prevent default reload, trigger standard form validation, and switch state to display a warm visual thank-you confirmation message inside the card.
+
+#### Section 08: Thank You / Closing Banner
+- **Layout:** Full-width cinematic banner image overlayed with a deep maroon gradient filter.
+- **Content:**
+  - Heading: **THANK YOU FOR BEING PART OF OUR SPECIAL DAY**
+  - Sub-heading: **AKHIL & KARTHIKA**
+  - Date: **24 · 01 · 2027**
+
+---
+
+### Implementation Instructions
+1. Write clean, modern React code broken into logical functional sub-components inside `src/components/`.
+2. Ensure full responsive design (Mobile, Tablet, Desktop) with explicit mobile-friendly spacing adjustments.
+3. Ensure absolute accessibility standards (proper ARIA attributes, image alt tags, semantic HTML tags, keyboard accessibility for RSVP and modals).
+4. Deliver runnable, complete components without placeholder code or incomplete comments.

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #2C221E;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF7F2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #E8D3D3;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8B2635;
+  }
+}
+
+@layer utilities {
+  /* Washi tape styling for polaroids and photos */
+  .tape-sticker {
+    position: absolute;
+    background: rgba(245, 239, 230, 0.75);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-left: 2px dashed rgba(212, 175, 55, 0.3);
+    border-right: 2px dashed rgba(212, 175, 55, 0.3);
+    z-index: 20;
+  }
+
+  /* Organic blob clip paths */
+  .blob-shape-1 {
+    border-radius: 58% 42% 68% 32% / 44% 56% 44% 56%;
+  }
+
+  .blob-shape-2 {
+    border-radius: 42% 58% 34% 66% / 61% 39% 61% 39%;
+  }
+
+  .blob-shape-arch {
+    border-radius: 200px 200px 32px 32px;
+  }
+
+  /* Subtle gold foil shimmer */
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #AA771C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Text shadow for hero headings */
+  .text-shadow-subtle {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
