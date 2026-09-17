@@ -139,7 +139,7 @@ export const OpeningScreen = ({ isOpen, onOpen }) => {
 
             {/* Bottom footnote */}
             <p className="text-xs text-charcoal-light font-light mt-4">
-              Tap anywhere or click button to enter with audio experience
+              Tap anywhere or click button to enter with audio experience.
             </p>
           </motion.div>
         </motion.div>
