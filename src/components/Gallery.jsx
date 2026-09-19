@@ -39,13 +39,13 @@ export const Gallery = () => {
         </div>
 
         {/* Asymmetric Staggered Photo Grid */}
-        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-6 md:gap-8 items-start">
           {weddingData.images.gallery.map((photo, index) => {
             // Alternating tape positions
             const tapeClass =
               index % 2 === 0
-                ? 'w-20 h-6 -top-3 left-8 -rotate-3'
-                : 'w-20 h-6 -top-3 right-8 rotate-2';
+                ? 'w-16 sm:w-20 h-5 sm:h-6 -top-2.5 sm:-top-3 left-6 sm:left-8 -rotate-3'
+                : 'w-16 sm:w-20 h-5 sm:h-6 -top-2.5 sm:-top-3 right-6 sm:right-8 rotate-2';
 
             return (
               <motion.div
@@ -53,13 +53,13 @@ export const Gallery = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className={`${photo.span} relative group`}
+                transition={{ duration: 0.7, delay: index * 0.08 }}
+                className={`${photo.span} relative group w-full`}
               >
                 {/* Photo Card with Polaroid Border and Tape */}
                 <div
                   onClick={() => setSelectedPhoto(photo)}
-                  className={`cursor-pointer relative bg-ivory-light p-3 sm:p-4 pb-6 sm:pb-8 rounded-2xl shadow-card hover:shadow-polaroid border border-blush/70 transition-all duration-500 transform ${photo.rotation} group-hover:rotate-0 group-hover:-translate-y-1.5`}
+                  className={`cursor-pointer relative bg-ivory-light p-3 sm:p-4 pb-5 sm:pb-8 rounded-2xl shadow-card hover:shadow-polaroid border border-blush/70 transition-all duration-500 transform sm:${photo.rotation} hover:rotate-0 hover:-translate-y-1.5`}
                 >
                   {/* Washi Tape Corner Detail */}
                   <TapeCorner className={tapeClass} />
@@ -76,18 +76,18 @@ export const Gallery = () => {
 
                     {/* Hover Overlay with expand icon */}
                     <div className="absolute inset-0 bg-maroon/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-ivory/90 text-maroon flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                        <Maximize2 className="w-5 h-5" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-ivory/90 text-maroon flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                        <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                     </div>
                   </div>
 
                   {/* Handwritten Caption & Tag */}
                   <div className="flex items-center justify-between px-1">
-                    <p className="font-script text-2xl text-maroon font-semibold tracking-wide">
+                    <p className="font-script text-xl sm:text-2xl text-maroon font-semibold tracking-wide">
                       {photo.caption}
                     </p>
-                    <span className="text-[11px] uppercase tracking-wider text-charcoal-light font-light flex items-center gap-1">
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-charcoal-light font-light flex items-center gap-1">
                       <Heart className="w-3 h-3 text-gold fill-gold" />
                       {photo.note}
                     </span>

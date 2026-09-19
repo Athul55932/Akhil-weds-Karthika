@@ -15,24 +15,24 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-ivory"
+      className="relative min-h-[100dvh] pt-24 pb-12 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-ivory"
       aria-label="Hero - Akhil & Karthika Wedding Invitation"
     >
       {/* Background organic atmosphere blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-blush/35 blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-sage-soft/30 blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-[28rem] h-[28rem] rounded-full bg-ivory-cream/80 blur-2xl" />
+        <div className="absolute top-10 right-10 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-blush/35 blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-sage-soft/30 blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-80 sm:w-[28rem] h-80 sm:h-[28rem] rounded-full bg-ivory-cream/80 blur-2xl" />
 
         {/* Botanical SVG accents */}
-        <BotanicalBranch className="absolute top-24 left-4 md:left-10 w-24 md:w-32 h-auto text-maroon/20 rotate-6" />
-        <BotanicalBranch className="absolute bottom-12 right-6 md:right-16 w-28 md:w-40 h-auto text-sage/35 -rotate-45" />
-        <DoodleHeart className="absolute top-36 right-1/4 w-6 h-6 text-maroon/30 rotate-12" />
-        <DoodleSparkle className="absolute bottom-32 left-1/4 w-5 h-5 text-gold/60" />
+        <BotanicalBranch className="absolute top-20 left-2 sm:top-24 sm:left-10 w-20 sm:w-32 h-auto text-maroon/20 rotate-6" />
+        <BotanicalBranch className="absolute bottom-10 right-2 sm:bottom-12 sm:right-16 w-24 sm:w-40 h-auto text-sage/35 -rotate-45" />
+        <DoodleHeart className="absolute top-28 right-8 sm:top-36 sm:right-1/4 w-5 sm:w-6 h-5 sm:h-6 text-maroon/30 rotate-12" />
+        <DoodleSparkle className="absolute bottom-24 left-8 sm:bottom-32 sm:left-1/4 w-4 sm:w-5 h-4 sm:h-5 text-gold/60" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Editorial Details & Typography */}
           <motion.div
@@ -43,31 +43,31 @@ export const Hero = () => {
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Handwritten script badge */}
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="font-script text-3xl md:text-4xl text-maroon font-semibold tracking-wide">
+            <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
+              <span className="font-script text-2xl sm:text-3xl md:text-4xl text-maroon font-semibold tracking-wide">
                 Together forever
               </span>
-              <Heart className="w-5 h-5 fill-maroon text-maroon inline-block animate-pulse" />
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-maroon text-maroon inline-block animate-pulse" />
             </div>
 
             {/* Couple Names in Grand Serif */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-maroon font-normal tracking-tight leading-[1.05] mb-6">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-maroon font-normal tracking-tight leading-[1.05] mb-4 sm:mb-6">
               AKHIL &amp; <br />
               <span className="italic font-light">KARTHIKA</span>
             </h1>
 
             {/* Subtext description */}
-            <p className="font-sans text-base sm:text-lg text-charcoal-muted max-w-xl mb-8 leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-charcoal-muted max-w-xl mb-6 sm:mb-8 leading-relaxed">
               With joyous hearts and the blessings of our families, we invite you to stand beside us as we exchange vows and celebrate the sacred bond of marriage.
             </p>
 
             {/* Key Event Badges Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full max-w-xl mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 w-full max-w-xl mb-8 sm:mb-10">
               {/* Date Card */}
-              <div className="flex flex-col items-center lg:items-start p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
+              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
                 <div className="flex items-center gap-2 text-maroon mb-1">
                   <Calendar className="w-4 h-4 text-gold" />
-                  <span className="text-xs uppercase tracking-wider font-semibold">Date</span>
+                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Date</span>
                 </div>
                 <span className="font-serif text-charcoal text-base font-medium">
                   {weddingData.event.date}
@@ -78,10 +78,10 @@ export const Hero = () => {
               </div>
 
               {/* Time Card */}
-              <div className="flex flex-col items-center lg:items-start p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
+              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
                 <div className="flex items-center gap-2 text-maroon mb-1">
                   <Clock className="w-4 h-4 text-gold" />
-                  <span className="text-xs uppercase tracking-wider font-semibold">Time</span>
+                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Time</span>
                 </div>
                 <span className="font-serif text-charcoal text-base font-medium">
                   11:00 AM – 11:30 AM
@@ -92,10 +92,10 @@ export const Hero = () => {
               </div>
 
               {/* Venue Card */}
-              <div className="flex flex-col items-center lg:items-start p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
+              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
                 <div className="flex items-center gap-2 text-maroon mb-1">
                   <MapPin className="w-4 h-4 text-gold" />
-                  <span className="text-xs uppercase tracking-wider font-semibold">Venue</span>
+                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Venue</span>
                 </div>
                 <span className="font-serif text-charcoal text-base font-medium truncate max-w-full">
                   Prince Convention
@@ -107,10 +107,10 @@ export const Hero = () => {
             </div>
 
             {/* Secondary Action CTA */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
               <button
                 onClick={handleScrollDown}
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-maroon hover:bg-maroon-hover text-ivory text-sm font-medium tracking-wider uppercase shadow-maroon transition-all duration-300 hover:translate-y-[-2px] cursor-pointer"
+                className="w-full sm:w-auto justify-center group inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-maroon hover:bg-maroon-hover text-ivory text-xs sm:text-sm font-medium tracking-wider uppercase shadow-maroon transition-all duration-300 hover:translate-y-[-2px] cursor-pointer"
               >
                 <span>Our Journey</span>
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -118,7 +118,7 @@ export const Hero = () => {
 
               <a
                 href="#rsvp"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent hover:bg-blush/20 text-maroon border border-maroon/40 text-sm font-medium tracking-wider uppercase transition-all duration-300"
+                className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-transparent hover:bg-blush/20 text-maroon border border-maroon/40 text-xs sm:text-sm font-medium tracking-wider uppercase transition-all duration-300"
               >
                 <span>Reserve Attendance</span>
               </a>

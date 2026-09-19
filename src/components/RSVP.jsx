@@ -127,7 +127,7 @@ export const RSVP = () => {
                         if (errors.name) setErrors({ ...errors, name: '' });
                       }}
                       placeholder="Enter your full name"
-                      className={`w-full px-5 py-3.5 rounded-2xl bg-ivory border text-charcoal placeholder:text-charcoal-light/60 focus:outline-none focus:ring-2 transition-all ${
+                      className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl bg-ivory border text-base text-charcoal placeholder:text-charcoal-light/60 focus:outline-none focus:ring-2 transition-all ${
                         errors.name
                           ? 'border-maroon focus:ring-maroon/30 bg-maroon/5'
                           : 'border-blush focus:border-maroon focus:ring-maroon/20'
