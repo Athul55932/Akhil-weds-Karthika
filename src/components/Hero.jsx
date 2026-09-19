@@ -1,16 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, ChevronDown, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { BotanicalBranch, DoodleHeart, DoodleSparkle, FloralOrnament } from './DecorativeElements';
 import { weddingData } from '../data/weddingData';
 
 export const Hero = () => {
-  const handleScrollDown = () => {
-    const detailsSection = document.getElementById('details') || document.getElementById('story');
-    if (detailsSection) {
-      detailsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section
@@ -57,72 +51,9 @@ export const Hero = () => {
             </h1>
 
             {/* Subtext description */}
-            <p className="font-sans text-sm sm:text-base md:text-lg text-charcoal-muted max-w-xl mb-6 sm:mb-8 leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-charcoal-muted max-w-xl leading-relaxed">
               With joyous hearts and the blessings of our families, we invite you to stand beside us as we exchange vows and celebrate the sacred bond of marriage.
             </p>
-
-            {/* Key Event Badges Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 w-full max-w-xl mb-8 sm:mb-10">
-              {/* Date Card */}
-              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
-                <div className="flex items-center gap-2 text-maroon mb-1">
-                  <Calendar className="w-4 h-4 text-gold" />
-                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Date</span>
-                </div>
-                <span className="font-serif text-charcoal text-base font-medium">
-                  {weddingData.event.date}
-                </span>
-                <span className="text-xs text-charcoal-light font-light">
-                  {weddingData.event.day}
-                </span>
-              </div>
-
-              {/* Time Card */}
-              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
-                <div className="flex items-center gap-2 text-maroon mb-1">
-                  <Clock className="w-4 h-4 text-gold" />
-                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Time</span>
-                </div>
-                <span className="font-serif text-charcoal text-base font-medium">
-                  11:00 AM – 11:30 AM
-                </span>
-                <span className="text-xs text-charcoal-light font-light">
-                  Muhurtham
-                </span>
-              </div>
-
-              {/* Venue Card */}
-              <div className="flex flex-col items-center lg:items-start p-3.5 sm:p-4 rounded-2xl bg-ivory-light/90 border border-blush/70 shadow-xs hover:border-maroon/40 transition-colors">
-                <div className="flex items-center gap-2 text-maroon mb-1">
-                  <MapPin className="w-4 h-4 text-gold" />
-                  <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold">Venue</span>
-                </div>
-                <span className="font-serif text-charcoal text-base font-medium truncate max-w-full">
-                  Prince Convention
-                </span>
-                <span className="text-xs text-charcoal-light font-light truncate max-w-full">
-                  Alappuzha, Kerala
-                </span>
-              </div>
-            </div>
-
-            {/* Secondary Action CTA */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-              <button
-                onClick={handleScrollDown}
-                className="w-full sm:w-auto justify-center group inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-maroon hover:bg-maroon-hover text-ivory text-xs sm:text-sm font-medium tracking-wider uppercase shadow-maroon transition-all duration-300 hover:translate-y-[-2px] cursor-pointer"
-              >
-                <span>Our Journey</span>
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-              </button>
-
-              <a
-                href="#rsvp"
-                className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-transparent hover:bg-blush/20 text-maroon border border-maroon/40 text-xs sm:text-sm font-medium tracking-wider uppercase transition-all duration-300"
-              >
-                <span>Reserve Attendance</span>
-              </a>
-            </div>
           </motion.div>
 
           {/* Right Column: Organic Curved Portrait Frame */}

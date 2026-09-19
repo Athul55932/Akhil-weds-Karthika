@@ -85,6 +85,8 @@ function App() {
       <OpeningScreen
         isOpen={!isInvitationOpen}
         onOpen={handleOpenInvitation}
+        isPlayingMusic={isPlayingMusic}
+        onToggleMusic={handleToggleMusic}
       />
 
       {/* Sticky Navigation Header */}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ExternalLink, CalendarPlus, Heart, Sparkles } from 'lucide-react';
 import { TapeCorner, BotanicalBranch, DoodleHeart, FloralOrnament } from './DecorativeElements';
+import { ScratchCard } from './ScratchCard';
 import { weddingData } from '../data/weddingData';
 
 export const WeddingDetails = () => {
@@ -57,89 +58,78 @@ export const WeddingDetails = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7 bg-ivory-light/95 border border-blush/80 rounded-3xl p-6 sm:p-10 shadow-card relative"
           >
-            {/* Top decorative badge */}
-            <div className="flex items-center justify-between mb-8 pb-4 border-b border-blush/40">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-gold" />
-                <span className="font-script text-2xl text-maroon font-medium">
-                  Muhurtham &amp; Feast
-                </span>
-              </div>
-              <span className="text-xs uppercase tracking-widest text-charcoal-light font-medium bg-ivory px-3 py-1 rounded-full border border-blush/60">
-                Kerala, India
-              </span>
-            </div>
+            <ScratchCard>
+              {/* Event Specs List */}
+              <div className="space-y-6 mb-8">
+                {/* Date */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
+                    <Calendar className="w-5 h-5 text-maroon" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
+                      Sunday, 24 January 2027
+                    </h3>
+                    <p className="text-sm text-charcoal-muted font-light mt-0.5">
+                      Makaram Month · Auspicious Muhurtham Day
+                    </p>
+                  </div>
+                </div>
 
-            {/* Event Specs List */}
-            <div className="space-y-6 mb-8">
-              {/* Date */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
-                  <Calendar className="w-5 h-5 text-maroon" />
+                {/* Time */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
+                    <Clock className="w-5 h-5 text-maroon" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
+                      11:00 AM – 11:30 AM
+                    </h3>
+                    <p className="text-sm text-charcoal-muted font-light mt-0.5">
+                      Wedding Ceremony followed by Grand Kerala Sadya at 12:00 PM
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
-                    Sunday, 24 January 2027
-                  </h3>
-                  <p className="text-sm text-charcoal-muted font-light mt-0.5">
-                    Makaram Month · Auspicious Muhurtham Day
-                  </p>
-                </div>
-              </div>
 
-              {/* Time */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
-                  <Clock className="w-5 h-5 text-maroon" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
-                    11:00 AM – 11:30 AM
-                  </h3>
-                  <p className="text-sm text-charcoal-muted font-light mt-0.5">
-                    Wedding Ceremony followed by Grand Kerala Sadya at 12:00 PM
-                  </p>
-                </div>
-              </div>
-
-              {/* Venue */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
-                  <MapPin className="w-5 h-5 text-maroon" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
-                    Prince Convention Centre
-                  </h3>
-                  <p className="text-sm text-charcoal-muted font-light mt-0.5 leading-relaxed">
-                    NH 66, Kalavoor, Alappuzha, Kerala 688522
-                  </p>
+                {/* Venue */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-2xl bg-ivory border border-blush text-maroon mt-1 shadow-xs">
+                    <MapPin className="w-5 h-5 text-maroon" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl text-charcoal font-medium">
+                      Prince Convention Centre
+                    </h3>
+                    <p className="text-sm text-charcoal-muted font-light mt-0.5 leading-relaxed">
+                      NH 66, Kalavoor, Alappuzha, Kerala 688522
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Actions: View Location + Add to Calendar */}
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-blush/40">
-              <a
-                href={weddingData.event.venue.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-maroon hover:bg-maroon-hover text-ivory text-sm font-medium tracking-wider uppercase shadow-sm transition-all duration-300 hover:shadow-maroon hover:-translate-y-0.5"
-              >
-                <span>View Location</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+              {/* Actions: View Location + Add to Calendar */}
+              <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-blush/40">
+                <a
+                  href={weddingData.event.venue.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-maroon hover:bg-maroon-hover text-ivory text-sm font-medium tracking-wider uppercase shadow-sm transition-all duration-300 hover:shadow-maroon hover:-translate-y-0.5"
+                >
+                  <span>View Location</span>
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </a>
 
-              <a
-                href={createGoogleCalendarUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-ivory hover:bg-blush/30 text-charcoal border border-blush/80 text-sm font-medium tracking-wider uppercase shadow-2xs transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <CalendarPlus className="w-4 h-4 text-maroon" />
-                <span>Add to Calendar</span>
-              </a>
-            </div>
+                <a
+                  href={createGoogleCalendarUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-ivory hover:bg-blush/30 text-charcoal border border-blush/80 text-sm font-medium tracking-wider uppercase shadow-2xs transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  <CalendarPlus className="w-4 h-4 text-maroon" />
+                  <span>Add to Calendar</span>
+                </a>
+              </div>
+            </ScratchCard>
           </motion.div>
 
           {/* Right Panel: Polaroid Taped Photo Card with Kerala Backwaters */}
